@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  app:
+    container_name: eventos-da-hora-zuul-gateway
+    image: eventos-da-hora-zuul-gateway:latest
+    build: ./
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
