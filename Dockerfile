@@ -11,7 +11,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 FROM openjdk:11-jre-slim
 COPY --from=build /home/app/target/eventos-da-hora-zuul-gateway-*.jar /usr/local/lib/eventos-da-hora-zuul-gateway.jar
-EXPOSE 8001
+EXPOSE 8000
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=container","-jar","/usr/local/lib/eventos-da-hora-zuul-gateway.jar"]
 
 
